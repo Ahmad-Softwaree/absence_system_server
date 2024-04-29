@@ -5,6 +5,7 @@ import {
   deleteEmployee,
   getEmployee,
   getEmployees,
+  getEmployeesSelect,
   updateEmployee,
 } from "../api/employee.js";
 import { checkBody } from "../middleware/validation/validation.js";
@@ -13,7 +14,9 @@ import { authMiddleware } from "../middleware/auth/auth.js";
 const employeeApp = express.Router();
 
 employeeApp.get("/", authMiddleware, getEmployees);
+employeeApp.get("/select", authMiddleware, getEmployeesSelect);
 employeeApp.get("/:id", authMiddleware, getEmployee);
+
 employeeApp.post(
   "/",
   authMiddleware,

@@ -25,7 +25,7 @@ authApp.post(
   checkBody,
   passwordValidation,
   hashPassword,
-  //authMiddleware,
+  authMiddleware,
   register
 );
 
